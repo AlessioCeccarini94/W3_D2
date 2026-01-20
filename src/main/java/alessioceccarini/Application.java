@@ -32,10 +32,15 @@ public class Application {
 		Event skyDay = new Event
 				("Sky Party", LocalDate.of(2026, 2, 3), EventType.PUBBLICO, 400);
 
+		Event backendParty = new Event
+				("BackEnd Party", LocalDate.of(2026, 3, 8), EventType.PUBBLICO, 30);
 
-		ed.save(wedding);
-		ed.save(birthday);
-		ed.save(footballGame);
-		ed.save(skyDay);
+		//SALAVATAGGIO EVENTI
+
+//		ed.save(wedding);
+//		ed.save(birthday);
+//		ed.save(footballGame);
+//		ed.save(skyDay);
+//		ed.save(backendParty);
 	}
 }
