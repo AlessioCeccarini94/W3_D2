@@ -3,6 +3,7 @@ package alessioceccarini;
 import alessioceccarini.dao.EventsDAO;
 import alessioceccarini.entities.Event;
 import alessioceccarini.entities.EventType;
+import alessioceccarini.exceptions.NotFoundEx;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -42,5 +43,23 @@ public class Application {
 //		ed.save(footballGame);
 //		ed.save(skyDay);
 //		ed.save(backendParty);
+
+		//RECUPERARE TRAMITE ID
+
+		try {
+			Event searchEvent = ed.searchByID(4);
+			System.out.println(searchEvent);
+		} catch (NotFoundEx ex) {
+			System.out.println(ex.getMessage());
+		}
+
+
+		//ELIMINARE
+
+		try {
+			ed.deleteEvent(5);
+		} catch (NotFoundEx ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 }
